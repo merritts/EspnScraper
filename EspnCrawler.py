@@ -65,6 +65,7 @@ class EspnScraper(object):
     
     def __init__(self, sport):
         self.sport = sport
+        self.urls = []
     
     def get_games(self, start_date):
         urls = self.get_game_urls(self.sport, start_date)
@@ -74,7 +75,7 @@ class EspnScraper(object):
     def get_game_links(self, page):
         soup = BeautifulSoup(page)
         links = soup.find_all("a")
-        return ["http://scores.espn.go.com"+l["href"] for l in links if l.text == u'Play\u2011By\u2011Play']
+        self.urls = ["http://scores.espn.go.com"+l["href"] for l in links if l.text == u'Play\u2011By\u2011Play']
 
     def get_game_data(self):
         for i in range(0, len(self.urls), 2):
