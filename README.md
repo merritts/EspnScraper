@@ -1,3 +1,5 @@
+[![Analytics](https://ga-beacon.appspot.com/UA-19650743-2/EspnScraper)](https://github.com/merritts/EspnScraper)
+
 EspnScraper
 ===========
 
